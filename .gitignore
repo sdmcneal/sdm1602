@@ -4,3 +4,5 @@ dist
 bower_components
 .c9
 .git
+app/*.js
+app/*.map
