@@ -9,7 +9,12 @@
     "removeComments": false,
     "noImplicitAny": false
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude" : [
+    ".c9",
+    "node_modules",
+    "data",
+    "bower_components",
+    ".idea"
+    ]
+  
 }
