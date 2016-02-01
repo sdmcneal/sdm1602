@@ -4,5 +4,5 @@ export interface Account {
     type: string;
     isbalancesheet: string;
     balance: number;
-    balancedate: string;
+    balancedate: Date;
 }

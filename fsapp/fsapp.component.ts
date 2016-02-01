@@ -12,7 +12,7 @@ import {OnInit} from 'angular2/core';
     <li *ngFor="#account of accounts"
       [class.selected]="account === selectedAccount"
       (click)="onSelect(account)">
-      <span class="badge">{{account.id}}</span> {{account.name}}
+      <span class="badge">{{account.id}}</span> {{account.name}} {{account.balancedate | date}}
     </li>
   </ul>
 `,
