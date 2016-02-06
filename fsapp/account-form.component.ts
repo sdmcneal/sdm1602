@@ -4,14 +4,16 @@ import {Account} from './account';
 
 @Component({
     selector: 'account-form',
-    templateUrl: 'fsapp/account-form.component.html'
+    templateUrl: 'fsapp/account-form.component.html',
+    inputs: ['account']
 })
 
 export class AccountFormComponent {
+    public account: Account;
+    public balanceText: string;
+
     types = ['Liquid','Fixed Asset','Non-reporting'];
-    
-    model = new Account(99,"Account Name","Liquid","Yes",0.0,new Date());
-    
+
     submitted = false;
     
     onSubmit() {this.submitted = true;}
@@ -19,9 +21,9 @@ export class AccountFormComponent {
     active = true;
     
     newAccount() {
-        this.model=new Account(99,"Account Name","Liquid","Yes",0.0,new Date());
+        this.account=new Account(99,"Account Name","Liquid","Yes",0.0,new Date());
         this.active=false;
         setTimeout(()=>this.active=true,0);
     }
-    get diagnostic() { return JSON.stringify(this.model) };
+    get diagnostic() { return JSON.stringify(this.account) };
 }

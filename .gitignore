@@ -9,3 +9,4 @@ app/*.map
 fsapp/*.js
 fsapp/*.map
 data
+.idea

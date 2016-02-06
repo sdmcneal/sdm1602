@@ -4,7 +4,8 @@
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "lite": "lite-server --port $PORT",
+    "lite": "lite-server",
+    "c9lite": "lite-server --port $PORT",
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
     "prestart-old": "npm install",
     "start-old": "http-server -a $IP -p $PORT",
