@@ -1,0 +1,31 @@
+  <h1>{{title}}</h1>
+  <h2>My Accounts</h2>
+ 
+      <div class="col-md-6">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>#</th>
+                <th>Account Name</th>
+                <th>Balance</th>
+                <th>Balance Date</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="#account of accounts">
+              <tr [class.active]="account === selectedAccount">
+                <button type="button" class="btn btn-md btn-primary" (click)="onSelect(account)">Edit</button>
+                <td>{{account.id}}</td>
+                <td>{{account.name}}</td>
+                <td>{{account.balance | currency }}</td>
+                <td>{{account.balancedate | date}}</td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+        <div *ngIf="selectedAccount">
+            Selected account: {{selectedAccount.name}}
+            <account-form></account-form>
+        </div>
+        

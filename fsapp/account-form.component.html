@@ -1,0 +1,23 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Account Form</h1>
+    <form *ngIf="active" (ngSubmit)="onSubmit()" #accountForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" required [(ngModel)]="model.name" ngControl="name" #name="ngForm">
+        TODO: remove this: {{model.name}}
+      </div>
+      <div class="form-group">
+        <label for="balance">Balance</label>
+        <input type="text" class="form-control" [(ngModel)]="model.balance" ngControl="balance">
+      </div>
+      <div class="form-group">
+          <label for="type">Type</label>
+          <select class="form-control" required [(ngModel)]="model.type" ngControl="type" #type="ngForm">
+              <option *ngFor="#t of types" [value]="t">{{t}}</option>
+          </select>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    </div>
+</div>

@@ -2,20 +2,11 @@ import {Component} from 'angular2/core';
 import {Account} from './account';
 import {AccountService} from './account.service';
 import {OnInit} from 'angular2/core';
+import {AccountFormComponent} from './account-form.component';
 
 @Component({
     selector: 'fs-app',
-    template:`
-  <h1>{{title}}</h1>
-  <h2>My Accounts</h2>
-  <ul class="heroes">
-    <li *ngFor="#account of accounts"
-      [class.selected]="account === selectedAccount"
-      (click)="onSelect(account)">
-      <span class="badge">{{account.id}}</span> {{account.name}} {{account.balancedate | date}}
-    </li>
-  </ul>
-`,
+    templateUrl: 'fsapp/fsapp.component.html',
   styles:[`
     .selected {
       background-color: #CFD8DC !important;
@@ -64,7 +55,8 @@ import {OnInit} from 'angular2/core';
       border-radius: 4px 0px 0px 4px;
     }
   `],
-    providers: [AccountService]
+    providers: [AccountService],
+    directives: [AccountFormComponent]
 })
 export class FSAppComponent implements OnInit {
     public title = 'Financial Forecaster 2';
